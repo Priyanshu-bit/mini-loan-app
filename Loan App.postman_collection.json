@@ -1,0 +1,212 @@
+{
+	"info": {
+		"_postman_id": "a3f1f43c-23d6-431d-b3c0-291a6e18aba5",
+		"name": "Loan App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27784104"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "create account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"google2@gmail.com\",\r\n    \"name\":\"mail\",\r\n    \"password\":\"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/auth/signup",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"google@gmail.com\",\r\n    \"name\":\"mail\",\r\n    \"password\":\"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Loan",
+			"item": [
+				{
+					"name": "get loan",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "bearerToken",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTk5NTk2NzQxNzJiZWEzYzBhNjUzNDIiLCJuYW1lIjoibWFpbCIsImVtYWlsIjoiZ29vZ2xlQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDA1JEFCRW5BRHUuSzdyUlR2a01RTW8ubi5vVmkveGV0aDNWMXFONFZRSm5wU1hOcC9BVDU2ZXFDIiwidXNlcl90eXBlIjoidXNlciIsIl9fdiI6MCwiaWF0IjoxNzA0NTQ5NTE0LCJleHAiOjE3MDQ1Njc1MTR9.9brNraznDRdqbTbYxkxVQIaoxKhY25fN3vY3QmY1xU0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/loans/",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"loans",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create loan",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "bearertoken",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTk5NTk2NzQxNzJiZWEzYzBhNjUzNDIiLCJuYW1lIjoibWFpbCIsImVtYWlsIjoiZ29vZ2xlQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDA1JEFCRW5BRHUuSzdyUlR2a01RTW8ubi5vVmkveGV0aDNWMXFONFZRSm5wU1hOcC9BVDU2ZXFDIiwidXNlcl90eXBlIjoiYWRtaW4iLCJfX3YiOjAsImlhdCI6MTcwNDYxMTU1NywiZXhwIjoxNzA0NjI5NTU3fQ.GL543fpXnxCXWOqALPVcRdA2bc7mw_e15M1gd3DHdd8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\":12000,\r\n    \"terms\":3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/v1/loans/create",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"loans",
+								"create"
+							],
+							"query": [
+								{
+									"key": "bearertoken",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTk5NTk2NzQxNzJiZWEzYzBhNjUzNDIiLCJuYW1lIjoibWFpbCIsImVtYWlsIjoiZ29vZ2xlQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDA1JEFCRW5BRHUuSzdyUlR2a01RTW8ubi5vVmkveGV0aDNWMXFONFZRSm5wU1hOcC9BVDU2ZXFDIiwidXNlcl90eXBlIjoidXNlciIsIl9fdiI6MCwiaWF0IjoxNzA0NTQ5NTE0LCJleHAiOjE3MDQ1Njc1MTR9.9brNraznDRdqbTbYxkxVQIaoxKhY25fN3vY3QmY1xU0",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change status",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "bearertoken",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTk5NTk2NzQxNzJiZWEzYzBhNjUzNDIiLCJuYW1lIjoibWFpbCIsImVtYWlsIjoiZ29vZ2xlQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDA1JEFCRW5BRHUuSzdyUlR2a01RTW8ubi5vVmkveGV0aDNWMXFONFZRSm5wU1hOcC9BVDU2ZXFDIiwidXNlcl90eXBlIjoiYWRtaW4iLCJfX3YiOjAsImlhdCI6MTcwNDU1MzgzMywiZXhwIjoxNzA0NTcxODMzfQ.Vip1TdWrOe6nhtw3KHV2LaGkALGixvfvdzMzuPz_MLc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/api/v1/loans/update-status/65996a28caa9a1e9853ec5f4/reject",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"loans",
+								"update-status",
+								"65996a28caa9a1e9853ec5f4",
+								"reject"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "repay loan",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/v1/auth/repay",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"repay"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
