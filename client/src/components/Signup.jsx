@@ -9,7 +9,7 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   //   const { setLoggedIn } = useContext(AuthContext);
   const navigate = useNavigate();
-  const {setLoggedIn, setToken, setUser} = useContext(AuthContext);
+  const { setLoggedIn, setToken, setUser } = useContext(AuthContext);
 
   const handleSignup = async (e) => {
     e.preventDefault();
@@ -17,11 +17,14 @@ const Signup = () => {
     try {
       e.preventDefault();
       if (!email || !password) throw "Please fill all fields!";
-      const user = await axios.post("http://localhost:5000/api/v1/auth/signup", {
-        email,
-        password,
-        name
-      });
+      const user = await axios.post(
+        "https://loan-app-be-onjz.onrender.com/api/v1/auth/signup",
+        {
+          email,
+          password,
+          name,
+        }
+      );
       setUser(user.data.user);
       setToken(user.data.token);
       setLoggedIn(true);

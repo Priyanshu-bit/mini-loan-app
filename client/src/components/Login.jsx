@@ -14,7 +14,7 @@ const Login = () => {
       e.preventDefault();
       if (!email || !password) throw "Please fill all fields!";
       const user = await axios.post(
-        "http://localhost:5000/api/v1/auth/login",
+        "https://loan-app-be-onjz.onrender.com/api/v1/auth/login",
         { email, password }
       );
       setUser(user.data.user);

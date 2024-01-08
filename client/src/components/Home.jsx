@@ -11,12 +11,15 @@ const Home = () => {
 
   const fetchLoans = async () => {
     try {
-      const loanData = await axios.get("http://localhost:5000/api/v1/loans", {
-        headers: {
-          "Content-Type": "application/json",
-          bearertoken: token,
-        },
-      });
+      const loanData = await axios.get(
+        "https://loan-app-be-onjz.onrender.com/api/v1/loans",
+        {
+          headers: {
+            "Content-Type": "application/json",
+            bearertoken: token,
+          },
+        }
+      );
       setLoans(loanData.data.Loans);
       console.log(loanData.data.Loans);
     } catch (err) {
@@ -28,7 +31,7 @@ const Home = () => {
   const updateStatus = async (id, status) => {
     try {
       await axios.patch(
-        `http://localhost:5000/api/v1/loans/update-status/`,
+        `https://loan-app-be-onjz.onrender.com/api/v1/loans/update-status/`,
         { id, status },
         {
           headers: {
@@ -49,7 +52,7 @@ const Home = () => {
   const updatePayment = async (loanId, installmentId) => {
     try {
       await axios.patch(
-        `http://localhost:5000/api/v1/loans/repay/`,
+        `https://loan-app-be-onjz.onrender.com/api/v1/loans/repay/`,
         { loanId, installmentId },
         {
           headers: {
